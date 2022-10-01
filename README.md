@@ -64,18 +64,16 @@ $$nnodes\in\{1,4,16,64\}$$
 - KRIPKE::multi-node, multi-processes-per-node, multi-threaded execution::the ranges of all parameters are given by the following sets:
 $$groups\in\{8,16,24,32,64\}$$  
 $$legendre\in\{0,1,2,3,4\}$$  
-$$quad\{8,16,32\}$$  
-$$zones\{8,16,32\}$$  
-$$thread_count\in\{1,2,4\}$$  
-$$ppn_count\in\{32,64\}$$  
-$$node_count\in\{1,2,4,8,16,32\}$$  
-$$layout\in\{"DGZ","DZG","GDZ","DGZ","ZDG","ZGD"\}$$  
-$$solver\in\{"sweep","bj"\}$$  
+$$quad\in\{8,16,32\}$$  
+$$zones\in\{8,16,32\}$$  
+$$thread\_count\in\{1,2,4\}$$  
+$$ppn\_count\in\{32,64\}$$  
+$$node\_count\in\{1,2,4,8,16,32\}$$  
+$$layout\in\{DGZ,DZG,GDZ,DGZ,ZDG,ZGD\}$$  
+$$solver\in\{sweep,bj\}$$  
 $$dset\in\{8,16,24,32\}$$  
 $$gset\in\{1,2,4,8\}$$  
 $$zset\in\{1,2,4,8\}$$  
-$$layout_dict\in\{"DGZ","DZG","GDZ","GZD","ZDG","ZGD"\}$$  
-$$solver\in\{"sweep","bj"\}$$  
 *k1,k2,k3,k4,k5,k7,k9*: execution-time sample mean of $\le 50$ iterations.  
 *k6*: execution-time of solver  
 *k8*: execution-time of sweep-solver  
