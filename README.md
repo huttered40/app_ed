@@ -30,6 +30,7 @@ Each defines a distinct sub-directory.
 - MPI Allreduce (Intel MPI Library on Stampede2): parameters [nbytes,nnodes,ppn] define message size, number of nodes, and number of processes-per-node, respectively.
 - MPI Bcast (Intel MPI Library on Stampede2): parameters [nbytes,nnodes,ppn] define message size, number of nodes, and number of processes-per-node, respectively.
 - Parallel QR Factorization (SLATE Library's PDGEQRF routine on Stampede2, multi-node/multi-processes-per-node execution): parameters [m,n,nnodes] define matrix dimensions as follows: $Q_{m\times n}R_{n\times n}\gets A_{m\times n}$, number of nodes, and number of processes-per-node, respectively.
+- Kripke Library on Stampede2, multi-node/multi-processes-per-node/multi-threaded execution): parameters [node_count,ppn_count,thread_count,layout,dset,gset,zset,groups,quad,zones,legendre,solver] define number of nodes, number of processes-per-node, number of threads-per-process, and the remaining are defined within Kripke's Github page.
 
 ### List of tensor datasets
 We provide the kernel name, followed by execution descriptions (e.g., single-threaded execution), followed by a list of configuration parameters with corresponding ranges and spacing. We then provide the list of execution data.
@@ -59,3 +60,22 @@ $$16\le nbytes \le 1024, \forall z\in\{1,4,16,64}$$
 $$nnodes\in\{1,4,16,64\}$$  
 *mean*: execution-time sample mean of $\le 50$ iterations.  
 *std*: execution-time sample standard deviation of $\le 50$ iterations.
+
+- KRIPKE::multi-node, multi-processes-per-node, multi-threaded execution::the ranges of all parameters are given by the following sets:
+$$groups\in\{8,16,24,32,64\}$$  
+$$legendre\in\{0,1,2,3,4\}$$  
+$$quad\{8,16,32\}$$  
+$$zones\{8,16,32\}$$  
+$$thread_count\in\{1,2,4\}$$  
+$$ppn_count\in\{32,64\}$$  
+$$node_count\in\{1,2,4,8,16,32\}$$  
+$$layout\in\{"DGZ","DZG","GDZ","DGZ","ZDG","ZGD"\}$$  
+$$solver\in\{"sweep","bj"\}$$  
+$$dset\in\{8,16,24,32\}$$  
+$$gset\in\{1,2,4,8\}$$  
+$$zset\in\{1,2,4,8\}$$  
+$$layout_dict\in\{"DGZ","DZG","GDZ","GZD","ZDG","ZGD"\}$$  
+$$solver\in\{"sweep","bj"\}$$  
+*k1,k2,k3,k4,k5,k7,k9*: execution-time sample mean of $\le 50$ iterations.  
+*k6*: execution-time of solver  
+*k8*: execution-time of sweep-solver  
