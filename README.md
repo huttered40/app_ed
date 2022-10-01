@@ -27,7 +27,8 @@ Current datasets have been collected on the following machines:
 Current datasets consist of the following kernels/applications.
 Each defines a distinct sub-directory.
 - GEMM (Intel MKL Library on Stampede2, single/multi-threaded execution): parameters [m,n,k] define matrix dimensions as follows: $C_{m\times n}\gets A_{m\times k}B_{k\times n}$
-- Allreduce (Intel MPI Library on Stampede2): parameters [nbytes,nnodes,ppn] define message size, number of nodes, and number of processes-per-node, respectively
+- MPI Allreduce (Intel MPI Library on Stampede2): parameters [nbytes,nnodes,ppn] define message size, number of nodes, and number of processes-per-node, respectively
+- MPI Bcast (Intel MPI Library on Stampede2): parameters [nbytes,nnodes,ppn] define message size, number of nodes, and number of processes-per-node, respectively
 
 ### List of tensor datasets
 We provide the kernel name, followed by execution descriptions (e.g., single-threaded execution), followed by a list of configuration parameters with corresponding ranges and spacing. We then provide the list of execution data.
@@ -36,3 +37,4 @@ We provide the kernel name, followed by execution descriptions (e.g., single-thr
 - GEMM::16-thread execution::{[m,(128,16384),log],[n,(128,16384),log],[k,(128,16384),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
 - GEMM::64-thread execution::{[m,(256,32768),log],[n,(256,32768),log],[k,(256,32768),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
 - Allreduce::multi-node/multi-processes-per-node execution::{[nbytes,(64,16777216),log],[nnodes,(1,2,4,8,16,32)],[k,(1,2,4,8,16,32,64)]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
+- Bcast::multi-node/multi-processes-per-node execution::{[nbytes,(64,16777216),log],[nnodes,(1,2,4,8,16,32)],[k,(1,2,4,8,16,32,64)]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
