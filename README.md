@@ -31,3 +31,6 @@ Each defines a distinct sub-directory.
 ### List of tensor datasets
 We provide the kernel name, followed by execution descriptions (e.g., single-threaded execution), followed by a list of configuration parameters with corresponding ranges and spacing. We then provide the list of execution data.
 - GEMM::1-thread execution::{[m,(32,4096),log],[n,(32,4096),log],[k,(32,4096),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
+- GEMM::4-thread execution::{[m,(64,8192),log],[n,(64,8192),log],[k,(64,8192),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
+- GEMM::16-thread execution::{[m,(128,16384),log],[n,(128,16384),log],[k,(128,16384),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
+- GEMM::64-thread execution::{[m,(256,32768),log],[n,(256,32768),log],[k,(256,32768),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
