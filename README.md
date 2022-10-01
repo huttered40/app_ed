@@ -13,7 +13,7 @@ of configuration parameters.
 ## Tensor datasets
 Tensor datasets consist of a list of executed configurations in which each configuration corresponds to a distinct element of a multi-dimensional array (i.e., tensor).
 Such datasets typically follow from the mapping of a discrete multi-dimensional configuration space onto a regular grid, each grid-point of which corresponds to a distinct configuration (and tensor element).
-They are not necessarily in any order.
+They are not necessarily in any order, nor are all grid-points/tensor elements necessarily executed.
 
 Tensor datasets have a file name corresponding to the size of the underlying tensor. Thus, a file titled 8x8x8.csv consists of 512 distinct configurations and corresponding (sample mean) execution times.
 
@@ -27,6 +27,7 @@ Current datasets have been collected on the following machines:
 Current datasets consist of the following kernels/applications.
 Each defines a distinct sub-directory.
 - GEMM (Intel MKL Library on Stampede2, single/multi-threaded execution): parameters [m,n,k] define matrix dimensions as follows: $C_{m\times n}\gets A_{m\times k}B_{k\times n}$
+- Allreduce (Intel MPI Library on Stampede2): parameters [nbytes,nnodes,ppn] define message size, number of nodes, and number of processes-per-node, respectively
 
 ### List of tensor datasets
 We provide the kernel name, followed by execution descriptions (e.g., single-threaded execution), followed by a list of configuration parameters with corresponding ranges and spacing. We then provide the list of execution data.
@@ -34,3 +35,4 @@ We provide the kernel name, followed by execution descriptions (e.g., single-thr
 - GEMM::4-thread execution::{[m,(64,8192),log],[n,(64,8192),log],[k,(64,8192),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
 - GEMM::16-thread execution::{[m,(128,16384),log],[n,(128,16384),log],[k,(128,16384),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
 - GEMM::64-thread execution::{[m,(256,32768),log],[n,(256,32768),log],[k,(256,32768),log]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
+- Allreduce::multi-node/multi-processes-per-node execution::{[nbytes,(64,16777216),log],[nnodes,(1,2,4,8,16,32)],[k,(1,2,4,8,16,32,64)]}::[sample mean of $\le 50$ iterations,sample variance of $\le 50$ iterations].
