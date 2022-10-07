@@ -4,8 +4,6 @@ This repository hosts execution data of multi-dimensional applications/kernels.
 
 Datasets are classified as 1) datasets, 2) tensor datasets, 3) test datasets, or 4) curated datasets.
 
-Each dataset is in CSV format.
-
 ## Datasets
 The first line in each file defines the configuration parameters and corresponding
 execution times and related statistical information (e.g., sample variance).
@@ -24,7 +22,8 @@ They are not necessarily in any order, nor are all grid-points/tensor elements n
 Tensor datasets have a file name corresponding to the size of the underlying tensor. Thus, a file titled 8x8x8.csv consists of 512 distinct configurations and corresponding (sample mean) execution times.
 
 ## Curated datasets
-The first column in all lines is an index unrelated to the specification
+Each line is space delimited.
+The first column in all lines is an index unrelated to the specification.
 of configuration parameters.
 There is no header line.
 Curated datasets typically follow from the mapping of a discrete multi-dimensional configuration space onto a regular grid, each grid-point of which corresponds to multiple configurations.
