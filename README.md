@@ -2,23 +2,33 @@
 Welcome!
 This repository hosts execution data of multi-dimensional applications/kernels.
 
-Datasets are classified as 1) tensor datasets or 2) raw datasets.
+Datasets are classified as 1) datasets, 2) tensor datasets, 3) test datasets, or 4) curated datasets.
 
-Each dataset is in CSV format.
+## Datasets
 The first line in each file defines the configuration parameters and corresponding
 execution times and related statistical information (e.g., sample variance).
 The first column in subsequent lines is an index unrelated to the specification
 of configuration parameters.
+Raw datasets consist of a list of executed configurations without those configurations being constrained to a grid-point of some underlying regular grid.
 
 ## Tensor datasets
+The first line in each file defines the configuration parameters and corresponding
+execution times and related statistical information (e.g., sample variance).
+The first column in subsequent lines is an index unrelated to the specification
+of configuration parameters.
 Tensor datasets consist of a list of executed configurations in which each configuration corresponds to a distinct element of a multi-dimensional array (i.e., tensor).
 Such datasets typically follow from the mapping of a discrete multi-dimensional configuration space onto a regular grid, each grid-point of which corresponds to a distinct configuration (and tensor element).
 They are not necessarily in any order, nor are all grid-points/tensor elements necessarily executed.
-
 Tensor datasets have a file name corresponding to the size of the underlying tensor. Thus, a file titled 8x8x8.csv consists of 512 distinct configurations and corresponding (sample mean) execution times.
 
-## Raw datasets
-Raw datasets consist of a list of executed configurations without those configurations being constrained to a grid-point of some underlying regular grid.
+## Curated datasets
+Each line is space delimited.
+The first column in all lines is an index unrelated to the specification.
+of configuration parameters.
+There is no header line.
+Curated datasets typically follow from the mapping of a discrete multi-dimensional configuration space onto a regular grid, each grid-point of which corresponds to multiple configurations.
+They are not necessarily in any order.
+Tensor datasets have a file name corresponding to the size of the underlying tensor.
 
 ### List of machines
 Current datasets have been collected on the following machines:
